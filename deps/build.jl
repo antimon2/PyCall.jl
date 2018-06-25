@@ -213,8 +213,9 @@ try # make sure deps.jl file is removed on error
         # documentation recommends.  However, they are documented
         # to always be the same on Windows, where it causes
         # problems if we try to include both.
-        exec_prefix = pysys(python, "exec_prefix")
-        Compat.Sys.iswindows() ? exec_prefix : pysys(python, "prefix") * ":" * exec_prefix
+        # exec_prefix = pysys(python, "exec_prefix")
+        # Compat.Sys.iswindows() ? exec_prefix : pysys(python, "prefix") * ":" * exec_prefix
+        ""
     else
         ENV["PYTHONHOME"]
     end
